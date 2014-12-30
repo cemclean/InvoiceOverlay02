@@ -1,0 +1,416 @@
+%!PS---------------------------------------------PostScript File
+%    File: DOCInvoiceOverlay01.PS
+%   Title: Sericol Invoice for AFP Overlay
+%    Date: 06.20.2002
+%  Author: ce mClean
+% Project: 
+%
+%---------------------------------------------------------------
+%Function: Sericol inovice for AFP overlay to print to PDF
+%
+%---------------------------------------------------------------
+%          M O D I F I C A T I O N S
+%---------------------------------------------------------------
+%          06.20.2002  cem
+%          -----------------------------------------------------
+%          Project started.
+%
+%-------------------------------------------------------Prologue
+% stuff for the Sericol logo
+/seritype
+ /Folio-ExtraBold findfont 50 scalefont def
+/moretype
+ /FranklinGothic-DemiCnd findfont 21 scalefont def
+/tmfont
+ /Symbol findfont 9 scalefont def
+ 
+ % other fonts
+ /invoicefont
+  /Helvetica findfont 10 scalefont def
+  
+ /headerfont
+  /Helvetica findfont 9 scalefont def
+  
+ /whitefont
+  /Helvetica-Bold findfont 9 scalefont def
+  
+ /tinyfont
+  /Helvetica findfont 6 scalefont def
+ 
+/inch {72 mul} def
+
+/x1 11 def
+/x2 184 def
+/x3 350 def
+
+/y1 707 def
+/y2 718 def
+
+/logo
+ {1 1 scale
+  0 .45 inch moveto
+  seritype setfont
+  0.0 0.91 0.87 0.0 setcmykcolor
+  gsave
+  .9113 1 scale
+  (SERICOL) show
+  grestore
+  0 .2 inch moveto
+  moretype setfont
+  0.0 0.0 0.0 1.0 setcmykcolor
+  gsave
+  .974 1 scale
+  (More than ink...Solutions.) show
+  grestore
+  gsave
+  2.74 inch .34 inch moveto
+  tmfont setfont
+  (\344) show
+  grestore
+ } def
+ 
+/logoshade
+ {1 1 scale
+  0 .45 inch moveto
+  seritype setfont
+  % 0.0 0.91 0.87 0.0 setcmykcolor
+  gsave
+  .9113 1 scale
+  (SERICOL) show
+  grestore
+  0 .2 inch moveto
+  moretype setfont
+  % 0.0 0.0 0.0 1.0 setcmykcolor
+  gsave
+  .974 1 scale
+  (More than ink...Solutions.) show
+  grestore
+  gsave
+  2.74 inch .34 inch moveto
+  tmfont setfont
+  (\344) show
+  grestore
+ } def
+ 
+/header
+ {4.875 inch 10.3 inch moveto
+  invoicefont setfont
+  gsave
+  0.0 0.91 0.87 0.0 setcmykcolor
+  (INVOICE #) show
+  headerfont setfont
+  430 41 moveto (PLEASE) show
+  430 31 moveto (PAY THIS AMOUNT) show
+  430 21 moveto (BY) show
+  grestore
+  
+  headerfont setfont
+  x1 y1 moveto (SERICOL, INC.) show
+  x2 y1 moveto (Remit to:) show
+  /y1 y1 11 sub def
+  x1 y1 moveto (1101 W. Cambridge Drive) show
+  x2 y1 moveto (P.O. Box 930446) show
+  /y1 y1 11 sub def
+  x1 y1 moveto (Kansas City, KS  66103) show
+  x2 y1 moveto (Kansas City, MO  64193-0446) show
+  /y1 y1 11 sub def
+  x1 y1 moveto (913-342-4060) show
+  /y1 y1 11 sub def
+  x1 y1 moveto (FAX 913-342-4752) show
+  
+  invoicefont setfont
+  x3 y2 moveto (TICKET #) show
+  /y2 y2 12 sub def
+  x3 y2 moveto (TERMS) show
+  /y2 y2 12 sub def
+  x3 y2 moveto (DATE) show
+  /y2 y2 12 sub def
+  x3 y2 moveto (P.O. #) show
+  /y2 y2 12 sub def
+  x3 y2 moveto (SHIPPED VIA) show
+  442 70 moveto (SALES TAX) show
+ 
+ } def
+ 
+/fourpops
+ {4 {pop} repeat} def
+ 
+/ctrshow
+ {dup stringwidth pop
+  2 div neg 0 rmoveto show
+ } def
+ 
+/leftbox
+ {gsave
+  18 549 translate
+  0 8 moveto
+  0 84 294 84 8 arcto fourpops
+  294 84 294 8 8 arcto fourpops
+  294 0 8 0 8 arcto fourpops
+  0 0 0 8 8 arcto fourpops
+  .75 setlinewidth stroke newpath 0 8 moveto
+  0 84 21 84 8 arcto fourpops
+  21 84 lineto 21 0 lineto 8 0 lineto 
+  0 0 0 8 8 arcto fourpops
+  fill
+  
+  /x4 10.5 def
+  /y4 67 def
+  /ydif 9 def
+  1 setgray
+  whitefont setfont
+  x4 y4 moveto (B) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (I) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (L) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (L) ctrshow /y4 y4 ydif sub ydif sub def
+  x4 y4 moveto (T) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (O) ctrshow
+  grestore
+ } def
+ 
+/rightbox
+ {gsave
+  324 549 translate
+  0 8 moveto
+  0 84 284 84 8 arcto fourpops
+  284 84 284 8 8 arcto fourpops
+  284 0 8 0 8 arcto fourpops
+  0 0 0 8 8 arcto fourpops
+  .75 setlinewidth stroke newpath 0 8 moveto
+  0 84 21 84 8 arcto fourpops
+  21 84 lineto 21 0 lineto 8 0 lineto 
+  0 0 0 8 8 arcto fourpops
+  fill
+  
+  /x4 10.5 def
+  /y4 67 def
+  /ydif 9 def
+  1 setgray
+  whitefont setfont
+  x4 y4 moveto (S) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (H) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (I) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (P) ctrshow /y4 y4 ydif sub ydif sub def
+  x4 y4 moveto (T) ctrshow /y4 y4 ydif sub def
+  x4 y4 moveto (O) ctrshow
+  grestore
+ } def
+ 
+/headingbox1
+ {/w exch def
+  /y5 exch def
+  /x5 exch def
+  /wordone exch def
+  /wordtwo exch def
+  gsave
+  x5 y5 translate
+  .375 neg 0 moveto .75 setlinewidth
+  0 400 neg rlineto stroke
+  /cw w 2 div def
+  0 0 moveto
+  0 24 w 24 8 arcto fourpops
+  w 24 w 0 8 arcto fourpops 
+  0 16 neg rlineto closepath fill
+  1 setgray whitefont setfont
+  cw 13 moveto
+  wordone ctrshow
+  cw 3 moveto
+  wordtwo ctrshow
+  grestore
+ } def
+ 
+ /headingbox2
+  {/w exch def
+   /y5 exch def
+   /x5 exch def
+   /wordone exch def
+   gsave
+   x5 y5 translate
+   .375 neg 0 moveto .75 setlinewidth
+   0 400 neg rlineto stroke
+   /cw w 2 div def
+   0 0 moveto
+   0 24 w 24 8 arcto fourpops
+   w 24 w 0 8 arcto fourpops 
+   0 16 neg rlineto closepath fill
+   1 setgray whitefont setfont
+   cw 8 moveto
+   wordone ctrshow
+   grestore
+ } def
+ 
+/headlines
+ {(SHIPPED) (QUANTITY) 3 488 80 headingbox1
+  (U/M) 84 488 18 headingbox2
+  (PRODUCT#) 103 488 101 headingbox2
+  (DESCRIPTION) 205 488 229 headingbox2
+  (UNIT) (PRICE) 435 488 77 headingbox1
+  (EXTENDED) (PRICE) 513 488 71 headingbox1
+  (T) 585 488 23 headingbox2
+  .75 setlinewidth 3 88 moveto
+  606 0 rlineto stroke
+  424 88 moveto
+  424 58 608 58 8 arcto 
+  608 58 608 88 8 arcto
+  608 88 lineto stroke
+  432 11  moveto
+  424 11 424 58 8 arcto
+  424 58 608 58 8 arcto
+  608 58 608 11 8 arcto
+  608 11 424 11 8 arcto
+  closepath stroke
+  513 88 moveto
+  .375 neg 0 rmoveto 0 78 neg rlineto stroke
+  2.5 setlinewidth
+  506 43 moveto
+  12 12 rlineto 39 0 rlineto 0 3 neg rlineto currentpoint stroke
+  moveto
+  6 neg 0 rlineto
+  6 8 neg rlineto
+  6 8 rlineto closepath fill
+  18 68 moveto tinyfont setfont
+  (Seller represents that with respect to the production of the articles covered by this notice,) show
+  18 56 moveto
+  (it has fully complied with the provisions of the Fail Labot Standards Acts of 1938, as amemded.) show
+ } def
+  
+/upperleftlogo
+ {gsave
+  .15 inch 10.06 inch translate
+  .530 .530 scale
+  logo
+  grestore
+ } def
+ 
+/droplogo
+ {gsave
+  138 234 translate
+  1.60 1.60 scale
+  % .9 setgray
+  0.10 0.069 0.00 0.011 setcmykcolor
+  logoshade
+  grestore
+ } def
+ 
+%-------------------------------------------------------ISO Logo
+
+/outsidecircletext
+ {circtextdict begin
+  /radius exch def
+  /centerangle exch def
+  /ptsize exch def
+  /str exch def
+  /xradius radius ptsize 4 div add def
+  
+  gsave
+   centerangle str findhalfangle add rotate
+   
+  str
+   {/charcode exch def
+    ( ) dup 0 charcode put outsideplacechar
+   } forall
+  grestore
+  end
+ } def
+ 
+/insidecircletext
+ {circtextdict begin
+  /radius exch def
+  /centerangle exch def
+  /ptsize exch def
+  /str exch def
+  
+  /xradius radius ptsize 3 div sub def
+  gsave
+   centerangle str findhalfangle sub rotate
+   str
+    {/charcode exch def
+     ( ) dup 0 charcode put insideplacechar
+    } forall
+   grestore
+   end
+  } def
+   
+/circtextdict 16 dict def
+circtextdict begin
+ /findhalfangle
+  {stringwidth pop 2 div
+   2 xradius mul pi mul div 360 mul
+  } def
+  
+/outsideplacechar
+ {/char exch def
+  /halfangle char findhalfangle def
+  gsave
+   halfangle neg rotate
+   radius 0 translate
+   -90 rotate
+   char stringwidth pop 2 div neg 0 moveto
+   char show 
+   grestore
+   halfangle 2 mul neg rotate
+  } def
+  
+/insideplacechar
+ {/char exch def
+ /halfangle char findhalfangle def
+ gsave
+  halfangle rotate
+  radius 0 translate
+  90 rotate
+  char stringwidth pop 2 div neg 0 moveto
+  char show
+ grestore
+ halfangle 2 mul rotate
+} def
+
+/pi 3.1415923 def
+end
+
+/isologo
+ {gsave
+  141 746 translate
+  .08 .08 scale
+
+  0 0 115 0 360 arc
+  5 setlinewidth stroke
+  0 0 175 0 360 arc stroke
+
+  /Helvetica-Bold findfont 36 scalefont setfont
+  (QUALITY SYSTEM)
+  36 90 132 outsidecircletext
+  
+  (CERTIFIED)
+  36 270 158 insidecircletext
+
+  %.5 setlinewidth
+  %-12 0 moveto 12 0 lineto stroke
+  %0 -12 moveto 0 12 lineto stroke
+
+  /Times-Bold findfont 100 scalefont setfont
+  0 12 moveto
+  (ISO)
+  dup stringwidth pop 2 div neg 0 rmoveto show
+  0 70 neg moveto
+  (9001) 
+  dup stringwidth pop 2 div neg 0 rmoveto show
+  grestore
+ } def
+
+%-----------------------------------------------Mainline Program
+
+.125 inch neg .125 inch translate
+
+1.00 0.69 0.00 0.11 setcmykcolor
+
+% droplogo
+isologo
+
+upperleftlogo
+header
+leftbox
+rightbox
+headlines
+
+showpage
+
